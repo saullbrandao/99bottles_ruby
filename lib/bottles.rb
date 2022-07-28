@@ -8,6 +8,18 @@ class Bottles
   end
 
   def verse(number)
+    BottleVerse.new(number).lyrics
+  end
+end
+
+class BottleVerse
+  attr_reader :number
+
+  def initialize(number)
+    @number = number
+  end
+
+  def lyrics
     bottle_number = BottleNumber.for(number)
 
     "#{bottle_number} ".capitalize + 'of beer on the wall, ' \
